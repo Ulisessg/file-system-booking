@@ -14,4 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
   },
+  module: {
+    rules: [{ test: /\.css$/, use: ['style-loader', 'css-loader'] }],
+  },
 };
