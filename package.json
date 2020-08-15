@@ -1,0 +1,15 @@
+{
+  "name": "booking-system",
+  "version": "1.0.0",
+  "description": "Booking system developed by C5-Team-Nancy-Platzi-Master <3",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.0.0-beta.26",
+    "webpack-cli": "^3.3.12"
+  }
+}
