@@ -1,69 +1,67 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
   entry: {
-    dates: path.resolve(__dirname, 'src/pages/dates/index-dates.js'),
-    login: path.resolve(__dirname, 'src/pages/login/index-login.js'),
-    logout: path.resolve(__dirname, 'src/pages/logout/index-logout.js'),
-    main: path.resolve(__dirname, 'src/pages/main/index-main.js'),
-    signin: path.resolve(__dirname, 'src/pages/sign-in/index-sign-in.js'),
-    signup: path.resolve(__dirname, 'src/pages/sign-up/index-sign-up.js'),
+    main: './src/pages/main/index-main.js',
+    dates: './src/pages/dates/index-dates.js',
+    login: './src/pages/login/index-login.js',
+    logout: './src/pages/logout/index-logout.js',
+    signin: './src/pages/sign-in/index-sign-in.js',
+    main: './src/pages/sign-up/index-sign-up.js',
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+  resolve: {
+    extensions: [
+      'js',
+      '.jsx',
+      '.wasm',
+      '.ts',
+      '.tsx',
+      '.mjs',
+      '.cjs',
+      '.js',
+      '.json',
+    ],
+  },
+  devServer: {
+    port: 9000,
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.html$/i,
+        loader: 'file-loader',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      inject: true,
-      filename: 'dates.html',
-      chunks: ['dates'],
-      template: 'public/dates.html',
+      template: './src/pages/main/main.html',
+      filename: 'dist/index.html',
     }),
-
     new HtmlWebpackPlugin({
-      template: 'public/login.html',
-      filename: 'login.html',
-      chunks: ['login'],
+      template: './src/pages/login/login.html',
+      filename: 'dist/login.html',
     }),
-
     new HtmlWebpackPlugin({
-      template: 'public/logout.html',
-      filename: 'logout.html',
-      chunks: ['logout'],
+      template: './src/pages/logout/logout.html',
+      filename: 'dist/logout.html',
     }),
-
     new HtmlWebpackPlugin({
-      template: 'public/main.html',
-      filename: 'main.html',
-      chunks: ['main'],
+      template: './src/pages/sign-in/sign-in.html',
+      filename: 'dist/signin.html',
     }),
-
     new HtmlWebpackPlugin({
-      template: 'public/sign-in.html',
-      filename: 'sign-in.html',
-      chunks: ['signin'],
+      template: './src/pages/sign-up/sign-up.html',
+      filename: 'dist/sign-up.html',
     }),
-
     new HtmlWebpackPlugin({
-      template: 'public/sign-up.html',
-      filename: 'sign-up.html',
-      chunks: ['signup'],
-    }),
-
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      template: './src/pages/dates/dates.html',
+      filename: 'dist/dates.html',
     }),
   ],
 };
