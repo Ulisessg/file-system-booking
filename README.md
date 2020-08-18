@@ -3,6 +3,9 @@
 ## Sistema de archivos del proyecto de booking
 
 ## Desarrollo 👩‍💻
+
+- Cuando  descargues el código por primera vez utiliza el comando "npm install" para instalar las dependencias necesarias
+
 - Ejecuta el comando "npm run" según la página que estés desarrollando
 
 - Todo el código está y se va acrear en la carpeta src
