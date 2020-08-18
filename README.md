@@ -4,6 +4,8 @@
 
 ## Desarrollo 👩‍💻
 
+- Elimina el repositorio remoto con "git remote rm origin" y añade el de tu proyecto con "git remote add origin (url de tu repositorio)"
+
 - Cuando  descargues el código por primera vez utiliza el comando "npm install" para instalar las dependencias necesarias
 
 - Ejecuta el comando "npm run" según la página que estés desarrollando
