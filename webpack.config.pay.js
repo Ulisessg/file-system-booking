@@ -10,20 +10,20 @@ module.exports = {
     filename: 'pay.js',
   },
   watchOptions: {
-    ignored: /node_modules/,
+    ignored: ['files/**/*.js', 'node_modules/**'],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
     index: 'pay.html',
-    contentBase: path.join(__dirname, 'src'),
-    hot: true,
+    contentBase: path.join(__dirname, 'src/pages/pay/index.js'),
     port: 9000,
     watchContentBase: true,
     watchOptions: {
       poll: true,
     },
+    host: 'localhost',
   },
   module: {
     rules: [

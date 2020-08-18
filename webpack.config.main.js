@@ -10,20 +10,20 @@ module.exports = {
     filename: 'main.js',
   },
   watchOptions: {
-    ignored: /node_modules/,
+    ignored: ['files/**/*.js', 'node_modules/**'],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
     index: 'main.html',
-    contentBase: path.join(__dirname, 'src'),
-    hot: true,
+    contentBase: path.join(__dirname, 'src/pages/main/index.js'),
     port: 9000,
     watchContentBase: true,
     watchOptions: {
       poll: true,
     },
+    host: 'localhost',
   },
   module: {
     rules: [
@@ -42,7 +42,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'public/index.html'),
