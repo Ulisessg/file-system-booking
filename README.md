@@ -1,5 +1,6 @@
 # file-system-booking 🏨
-Sistema de archivos del proyecto de booking
+
+## Sistema de archivos del proyecto de booking
 
 ## Desarrollo 👩‍💻
 - Ejecuta el comando "npm run" según la página que estés desarrollando
