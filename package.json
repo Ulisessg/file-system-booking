@@ -1,39 +1,46 @@
 {
   "name": "booking-system",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Booking system developed by C5-Team-Nancy-Platzi-Master <3",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start-login": "webpack-dev-server --config ./webpack.config.login --mode development --open",
-    "start-main": "webpack-dev-server --config ./webpack.config.main --mode development --open",
-    "start-pay": "webpack-dev-server --config ./webpack.config.pay --mode development --open"
+    "login": "webpack-dev-server --config ./webpack.config.login --mode development --open",
+    "main": "webpack-dev-server --config ./webpack.config.main --mode development --open",
+    "pay": "webpack-dev-server --config ./webpack.config.pay --mode development --open",
+    "lint": "eslint src/** --fix"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "exports-loader": "^1.1.0",
+    "css-loader": "^4.2.1",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "html-loader": "^1.2.0",
     "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "mini-css-extract-plugin": "^0.10.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "bootstrap": "^4.5.2",
-    "css-loader": "^4.2.1",
-    "file-loader": "^6.0.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "style-loader": "^1.2.1"
+    "react-dom": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && git add .",
+      "pre-push": "npm run lint && git pull origin master"
+    }
   }
 }
