@@ -11,13 +11,12 @@
 - Ejecuta el comando "npm run" según la página que estés desarrollando
 
 - Todo el código está y se va acrear en la carpeta src
-- La carpeta pages contiene todas las pantallas
 
 - En los archivos index van todos los componentes de la pantalla
 
 - En la carpeta pages/main está la vista principal que va a tener el usuario
 
-- En la carpeta src/pages/components van todos los componentes que se van a usar en todas las páginas
+- En la carpeta src/components van todos los componentes que se van a usar en todas las páginas
 
 - Todas las páginas deben de incluir los default-styles.css que se encuantra en src/pasges/default-styles.css que solamente va a ir en el index-styles
 
