@@ -22,6 +22,8 @@
 
 - Para incluir css solo se importa al archivo JS que lo va a utilizar: import 'styles/style.css', en producción se crearán los archivos css necesarios
 
+### Se utiliza eslint y husky para mantener un estandar de código, si ese estandar no se cumple no se pueden hacer commits o push al repositorio.
+
 
 ## Extensiones de vsCode recomendadas: 👾
   - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme (Iconos)
