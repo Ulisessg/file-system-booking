@@ -11,18 +11,25 @@
 - Ejecuta el comando "npm run" según la página que estés desarrollando
 
 - Todo el código está y se va acrear en la carpeta src
-- La carpeta pages contiene todas las pantallas
 
 - En los archivos index van todos los componentes de la pantalla
 
 - En la carpeta pages/main está la vista principal que va a tener el usuario
 
-- En la carpeta src/pages/components van todos los componentes que se van a usar en todas las páginas
+- En la carpeta src/components van todos los componentes que se van a usar en todas las páginas
 
 - Todas las páginas deben de incluir los default-styles.css que se encuantra en src/pasges/default-styles.css que solamente va a ir en el index-styles
 
 - Para incluir css solo se importa al archivo JS que lo va a utilizar: import 'styles/style.css', en producción se crearán los archivos css necesarios
 
+<<<<<<< HEAD
+=======
+## Linters
+
+- Se utiliza eslint y husky para mantener un estandar de código, si ese estandar no se cumple no se pueden hacer commits o push al repositorio.
+
+
+>>>>>>> a6914c3e51fe66afbe2ec77b9cf1d4050ae4b7d2
 ## Extensiones de vsCode recomendadas: 👾
 
 - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme (Iconos)
