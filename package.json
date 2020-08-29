@@ -4,11 +4,11 @@
   "description": "Booking system developed by C5-Team-Nancy-Platzi-Master <3",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext .jsx --ext .js --ignore-pattern '/src/styles/*' ./src/**/***/* --fix",
     "build": "webpack --mode production",
     "login": "webpack-dev-server --config ./webpack.config.login --mode development --open",
     "main": "webpack-dev-server --config ./webpack.config.main --mode development --open",
-    "pay": "webpack-dev-server --config ./webpack.config.pay --mode development --open",
-    "lint": "eslint src/** --fix"
+    "pay": "webpack-dev-server --config ./webpack.config.pay --mode development --open"
   },
   "author": "",
   "license": "MIT",
@@ -24,11 +24,15 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "exports-loader": "^1.1.0",
     "html-loader": "^1.2.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "mini-css-extract-plugin": "^0.10.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
@@ -39,8 +43,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint && git pull origin master"
+      "pre-commit": "npm run lint && git add ."
     }
   }
 }

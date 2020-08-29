@@ -1,7 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const { HotModuleReplacementPlugin } = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/pay/index.js'),
@@ -22,10 +22,12 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-        },
+        test: /\.(jpe?g|png|svg|gif|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -34,7 +36,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html',
@@ -47,7 +49,7 @@ module.exports = {
     port: 9000,
     watchContentBase: true,
     watchOptions: {
-      poll: true,
+      poll: 500,
     },
   },
 };

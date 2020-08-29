@@ -6,7 +6,7 @@
 
 - Elimina el repositorio remoto con "git remote rm origin" y añade el de tu proyecto con "git remote add origin (url de tu repositorio)"
 
-- Cuando  descargues el código por primera vez utiliza el comando "npm install" para instalar las dependencias necesarias
+- Cuando descargues el código por primera vez utiliza el comando "npm install" para instalar las dependencias necesarias
 
 - Ejecuta el comando "npm run" según la página que estés desarrollando
 
@@ -23,12 +23,13 @@
 
 - Para incluir css solo se importa al archivo JS que lo va a utilizar: import 'styles/style.css', en producción se crearán los archivos css necesarios
 
-
 ## Extensiones de vsCode recomendadas: 👾
-  - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme (Iconos)
-  - https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer (Colores)
-  - https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath (Ayuda a poner la ruta de los archivos)
+
+- https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme (Iconos)
+- https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer (Colores)
+- https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath (Ayuda a poner la ruta de los archivos)
 
 ## Extensiones necesarias: 👷‍♂️
-  - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode (Ayuda a formatear el código para que sea se vea mejor)
-  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint (Ayuda a estandarizar el código)
+
+- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode (Ayuda a formatear el código para que sea se vea mejor)
+- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint (Ayuda a estandarizar el código)

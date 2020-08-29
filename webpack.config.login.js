@@ -22,10 +22,12 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-        },
+        test: /\.(jpe?g|png|svg|gif|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
