@@ -4,25 +4,49 @@
 
 ## Desarrollo 👩‍💻
 
-- Elimina el repositorio remoto con "git remote rm origin" y añade el de tu proyecto con "git remote add origin (url de tu repositorio)"
+### Inicio
 
 - Cuando descargues el código por primera vez utiliza el comando "npm install" para instalar las dependencias necesarias
 
-- Ejecuta el comando "npm run" según la página que estés desarrollando
+### Comandos
 
-- Todo el código está y se va acrear en la carpeta src
+    	Ejecuta el comando "npm run start" para iniciar el servidor de desarrollo
 
-- En los archivos index van todos los componentes de la pantalla
+    	 Ejecuta el comando "npm run build" para generar los archivos de producción
 
-- En la carpeta pages/main está la vista principal que va a tener el usuario
+    	 Ejecuta el comando "npm run lint" para que eslint revise tu código
 
-- En la carpeta src/components van todos los componentes que se van a usar en todas las páginas
+### Carpetas
 
-- Todas las páginas deben de incluir los default-styles.css que se encuantra en src/pasges/default-styles.css que solamente va a ir en el index-styles
+- Todo el código frontend está en la carpeta src
 
-- Para incluir css solo se importa al archivo JS que lo va a utilizar: import 'styles/style.css', en producción se crearán los archivos css necesarios
+- En los archivos .js de cada carpeta van todos los componentes
 
-- Se utiliza eslint y husky para mantener un estandar de código, si ese estandar no se cumple no se pueden hacer commits o push al repositorio.
+- La carpeta src/pages/inicio tiene la página principal
+
+- En la carpeta src/components los componentes están divididos según la página
+
+- En la carpeta src/components/common van todos los componentes que se van a usar en todas las páginas
+
+### Servidor de desarrollo
+
+- Para moverte entre las diferentes páginas durante el desarrollo: La página de inicio no está en la raíz, cada página está dento de una carpeta con su mismo nombre, por lo que si quieres ir de la página de inicio a login la url sería:
+
+  /login/login.html
+
+### Estilos
+
+- Todas las páginas deben de incluir los default-styles.css que se encuentran en src/styles/default-styles.css
+
+- Para incluir css solo se importa al archivo JS que lo va a utilizar
+
+### Linter
+
+- Se utiliza eslint y husky para mantener un estandar de código, si ese estandar no se cumple no se pueden hacer commits
+
+### Github
+
+- Recuerda hacer siempre pull request antes de hacer un push
 
 ## Extensiones de vsCode recomendadas: 👾
 
