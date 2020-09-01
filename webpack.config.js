@@ -81,7 +81,7 @@ module.exports = {
     port: 2001,
     watchContentBase: true,
     watchOptions: {
-      poll: 420,
+      poll: 666,
     },
   },
 };
