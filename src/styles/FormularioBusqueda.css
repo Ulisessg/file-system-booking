@@ -1,21 +1,35 @@
+.container .busca {
+  text-align: center;
+}
+
 .formulario {
   margin-top: 5vh;
   display: grid;
-  width: 100%;
-  justify-content: center;
+  width: 50vw;
+  background-color: #f8f9fa;
 }
 
 form {
+  padding-top: 40px;
   display: grid;
   flex-direction: column;
   justify-items: center;
   width: 100%;
 }
 
-.date {
+.expand {
   justify-self: stretch;
 }
 
 label {
   width: 100%;
+}
+
+.masOpciones {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.fecha {
+  cursor: pointer;
 }
