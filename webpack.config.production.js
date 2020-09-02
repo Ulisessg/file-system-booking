@@ -34,10 +34,14 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|png|svg|gif|webp)$/i,
+        test: /\.(png|gif|jpg|svg|eot|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
+            options: {
+              name: 'assets/[hash].[ext]',
+              limit: 90000,
+            },
           },
         ],
       },

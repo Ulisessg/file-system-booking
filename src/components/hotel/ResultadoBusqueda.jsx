@@ -3,17 +3,14 @@ import React, { PureComponent } from 'react';
 import '../../styles/resultadoBusqueda.css';
 // import Hotel from './hotel.jpg';
 
-// import hotel from '../../../images/hotel.jpg';
+import hotel from '../../img/hotel.jpg';
 
 class ResultadoBusqueda extends PureComponent {
   render() {
     return (
       <section>
         <div>
-          <img
-            src='https://i.postimg.cc/SsJLn2M3/hotel.jpg'
-            alt='Imagen de hotel'
-          />
+          <img src={hotel} alt='Imagen de hotel' />
           <div>
             <table>
               <thead>
