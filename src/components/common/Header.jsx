@@ -6,67 +6,69 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <nav
-        id='header'
-        className='navbar navbar-expand-lg navbar-dark bg-light  sticky-top'
-      >
-        <div className='container'>
-          <a className='navbar-brand' href='#' />
-          <img
-            src='#'
-            width='30'
-            height='30'
-            className='d-inline-block align-top'
-            alt=''
-            loading='lazy alt='
-          />
+      <header>
+        <nav
+          id='header'
+          className='navbar navbar-expand-lg navbar-dark bg-light  sticky-top'
+        >
+          <div className='container'>
+            <a className='navbar-brand' href='#' />
+            <img
+              src='#'
+              width='30'
+              height='30'
+              className='d-inline-block align-top'
+              alt=''
+              loading='lazy alt='
+            />
 
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-toggle='collapse'
-            data-target='#navbar'
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon' />
-          </button>
+            <button
+              className='navbar-toggler'
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbar'
+              aria-controls='navbarSupportedContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <span className='navbar-toggler-icon' />
+            </button>
 
-          <div className='collapse navbar-collapse' id='navbar'>
-            <ul className='navbar-nav mr-auto'>
-              <li className='nav-item '>
-                <a className='nav-link text-dark' href='/'>
-                  Home
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link text-dark' href='#'>
-                  Productos
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link text-dark' href='#'>
-                  Servicios
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link text-dark' href='#'>
-                  Contactanos
-                </a>
-              </li>
-            </ul>
+            <div className='collapse navbar-collapse' id='navbar'>
+              <ul className='navbar-nav mr-auto'>
+                <li className='nav-item '>
+                  <a className='nav-link text-dark' href='/'>
+                    Home
+                  </a>
+                </li>
+                <li className='nav-item'>
+                  <a className='nav-link text-dark' href='#'>
+                    Productos
+                  </a>
+                </li>
+                <li className='nav-item'>
+                  <a className='nav-link text-dark' href='#'>
+                    Servicios
+                  </a>
+                </li>
+                <li className='nav-item'>
+                  <a className='nav-link text-dark' href='#'>
+                    Contactanos
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div>
-          <a className='btn btn-outline-dark mr-sm-2' href='login.html'>
-            Iniciar sesion
-          </a>
-          <a className='btn btn-outline-dark mr-sm-2' href='#'>
-            Registro
-          </a>
-        </div>
-      </nav>
+          <div>
+            <a className='btn btn-outline-dark mr-sm-2' href='login.html'>
+              Iniciar sesion
+            </a>
+            <a className='btn btn-outline-dark mr-sm-2' href='#'>
+              Registro
+            </a>
+          </div>
+        </nav>
+      </header>
     </>
   );
 };
