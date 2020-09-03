@@ -18,7 +18,7 @@ const Header = () => {
               width='30'
               height='30'
               className='d-inline-block align-top'
-              alt=''
+              alt='Logo'
               loading='lazy alt='
             />
 

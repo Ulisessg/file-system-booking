@@ -37,7 +37,7 @@ class FormularioBusqueda extends React.PureComponent {
 
   render() {
     return (
-      <div className='container'>
+      <section className='container'>
         <h1 className='busca'>Busca tu hotel ideal</h1>
 
         <section className='formulario container'>
@@ -101,14 +101,14 @@ class FormularioBusqueda extends React.PureComponent {
               onClick={this.handleOptions}
             >
               {this.state.showOptions ?
-                'Mostrar menos Opciones' :
+                'Mostrar menos opciones' :
                 'Mostrar más opciones'}
             </button>
 
             {this.state.showOptions && <Opciones />}
           </form>
         </section>
-      </div>
+      </section>
     );
   }
 }

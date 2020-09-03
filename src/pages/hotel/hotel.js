@@ -13,7 +13,15 @@ ReactDom.render(
   <>
     <Header />
     <FormularioBusqueda />
-    <ResultadoBusqueda />
+
+    <section className='container resultados'>
+      <ResultadoBusqueda />
+      <ResultadoBusqueda />
+      <ResultadoBusqueda />
+      <ResultadoBusqueda />
+      <ResultadoBusqueda />
+      <ResultadoBusqueda />
+    </section>
   </>,
   document.getElementById('root'),
 );
