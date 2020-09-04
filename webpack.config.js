@@ -55,17 +55,17 @@ module.exports = {
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/hotel.html'),
-      filename: path.resolve(__dirname, 'dist/busqueda/busqueda.html'),
+      filename: path.resolve(__dirname, 'dist/buscar.html'),
       chunks: ['busqueda'],
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/hotelOwners.html'),
-      filename: path.resolve(__dirname, 'dist/propietarios/propietarios.html'),
+      filename: path.resolve(__dirname, 'dist/propietarios.html'),
       chunks: ['propietarios'],
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/login.html'),
-      filename: path.resolve(__dirname, 'dist/login/login.html'),
+      filename: path.resolve(__dirname, 'dist/login.html'),
       chunks: ['login'],
     }),
     new HtmlWebpackPlugin({
@@ -75,7 +75,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/pago.html'),
-      filename: path.resolve(__dirname, 'dist/pago/pago.html'),
+      filename: path.resolve(__dirname, 'dist/pago.html'),
       chunks: ['pago'],
     }),
   ],
