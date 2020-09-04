@@ -14,6 +14,7 @@ class Opciones extends React.PureComponent {
           <label htmlFor='pricioMinimo'>
             Precio minimo: $
             <input
+              name='precioMinimo'
               id='pricioMinimo'
               type='number'
               className='form-control'
@@ -27,6 +28,7 @@ class Opciones extends React.PureComponent {
           <label htmlFor='pricioMaximo'>
             Precio máximo: $
             <input
+              name='pricioMaximo'
               id='pricioMaximo'
               type='number'
               className='form-control'
@@ -40,6 +42,7 @@ class Opciones extends React.PureComponent {
           <label htmlFor='huespedes'>
             Número de huespedes
             <input
+              name='huespedes'
               id='huespedes'
               type='number'
               className='form-control'

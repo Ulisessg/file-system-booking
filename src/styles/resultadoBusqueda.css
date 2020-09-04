@@ -22,12 +22,6 @@
   box-shadow: -2px 0px 10px 2px #a89e9e;
 }
 
-.resultado:hover {
-  transform: scale(1.22);
-  opacity: 1;
-  cursor: pointer;
-}
-
 .info {
   display: grid;
 }
@@ -61,5 +55,10 @@
   }
   .resultado {
     width: 20vw;
+  }
+  .resultado:hover {
+    transform: scale(1.22);
+    opacity: 1;
+    cursor: pointer;
   }
 }

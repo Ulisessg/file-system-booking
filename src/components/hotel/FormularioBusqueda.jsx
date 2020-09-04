@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 
@@ -15,9 +16,11 @@ class FormularioBusqueda extends React.PureComponent {
     this.handleOptions = this.handleOptions.bind(this);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   handleClick(event) {
     event.preventDefault();
-    this.event = event;
+    // this.event = event;
+    console.log(form);
   }
 
   handleOptions() {
@@ -35,18 +38,23 @@ class FormularioBusqueda extends React.PureComponent {
     }
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <section className='container'>
         <h1 className='busca'>Busca tu hotel ideal</h1>
 
         <section className='formulario container'>
-          <form method='GET'>
+          <form onSubmit={this.handleClick}>
             {/* Ubicación */}
             <div className='form-group expand'>
               <label htmlFor='ubicacion'>
                 Ubicación:
                 <input
+                  name='ubicacion'
                   id='ubicacion'
                   type='text'
                   className='form-control'
@@ -60,6 +68,7 @@ class FormularioBusqueda extends React.PureComponent {
               <label htmlFor='fechaEntrada'>
                 Fecha de entrada:
                 <input
+                  name='fechaEntrada'
                   id='fechaEntrada'
                   type='date'
                   className='form-control fecha'
@@ -73,6 +82,7 @@ class FormularioBusqueda extends React.PureComponent {
               <label htmlFor='fechasalida'>
                 Fecha de salida:
                 <input
+                  name='fechaSalida'
                   id='fechaSalida'
                   type='date'
                   className='form-control fecha'
