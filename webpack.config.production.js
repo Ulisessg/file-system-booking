@@ -19,7 +19,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
-    publicPath: '/',
+    publicPath: './',
   },
 
   resolve: {
@@ -51,6 +51,14 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, { loader: 'css-loader' }],
       },
     ],
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 1000,
+      maxSize: 1000000,
+    },
   },
 
   plugins: [
