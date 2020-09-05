@@ -1,3 +1,10 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .resultados {
   display: grid;
   justify-content: center;
@@ -57,7 +64,7 @@
     width: 20vw;
   }
   .resultado:hover {
-    transform: scale(1.22);
+    transform: scale(1.15);
     opacity: 1;
     cursor: pointer;
   }

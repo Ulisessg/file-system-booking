@@ -15,6 +15,8 @@ const FormularioBusqueda = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
+    //Ignorar regla hasta enviarla
+    // eslint-disable-next-line no-unused-vars
     const data = {
       ubicacion,
       fechaEntrada,
@@ -23,7 +25,6 @@ const FormularioBusqueda = () => {
       precioMaximo,
       huespedes,
     };
-    console.log(data);
   };
 
   const handleOptions = () => {

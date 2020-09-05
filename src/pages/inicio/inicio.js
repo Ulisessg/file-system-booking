@@ -50,14 +50,16 @@ const Carousel = () => {
                       sit in!
                     </p>
 
-                    <button
-                      type='button'
-                      className='btn btn-platzi'
-                      data-toggle='modal'
-                      data-target='#Buscar'
-                    >
-                      Buscar
-                    </button>
+                    <a href='./buscar.html'>
+                      <button
+                        type='button'
+                        className='btn btn-platzi'
+                        data-toggle='modal'
+                        data-target='#Buscar'
+                      >
+                        Buscar
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
