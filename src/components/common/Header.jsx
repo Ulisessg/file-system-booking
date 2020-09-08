@@ -3,6 +3,9 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
+//Estilos
+import '../../styles/header-styles.css';
+
 const Header = () => {
   return (
     <>

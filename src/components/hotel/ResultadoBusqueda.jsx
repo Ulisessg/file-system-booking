@@ -13,7 +13,7 @@ const datos = {
 const ResultadoBusqueda = () => {
   return (
     <div className='resultado'>
-      <a href={`./resultado.html/:${datos.pagina1.urlId}`}>
+      <a href={`./resultado.html/#/${datos.pagina1.urlId}`}>
         <img className='resultado__img' src={hotel} alt='Imagen de hotel' />
         <br />
         <table className='info'>

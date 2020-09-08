@@ -14,6 +14,7 @@ module.exports = {
     login: path.resolve(__dirname, 'src/pages/login/login.js'),
     inicio: path.resolve(__dirname, 'src/pages/inicio/inicio.js'),
     pago: path.resolve(__dirname, 'src/pages/pago/pago.js'),
+    resultado: path.resolve(__dirname, 'src/pages/resultado/resultado.js'),
   },
 
   output: {
@@ -91,6 +92,11 @@ module.exports = {
       template: path.resolve(__dirname, 'public/pago.html'),
       filename: path.resolve(__dirname, 'dist/pago.html'),
       chunks: ['pago'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/resultado.html'),
+      filename: path.resolve(__dirname, 'dist/resultado.html'),
+      chunks: ['resultado'],
     }),
   ],
 };
