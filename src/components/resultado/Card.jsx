@@ -1,40 +1,23 @@
 import React from 'react';
 
-import '../../styles/carrusel.css';
+import '../../styles/card.css';
 
-//Imagenes
-import hotel from '../../img/hotel.jpg';
-import habitacion from '../../img/habitacion.jpg';
-import registro from '../../img/registro.jpg';
-import mostrador from '../../img/mostrador.jpg';
+import Carrusel from './Carrusel';
+import Informacion from './Informacion';
+import Iframe from './Iframe';
+import Datos from './Datos';
+import Boton from './Boton';
 
 const Card = () => {
   return (
-    <>
-      <main id='main'>
-        <div
-          id='carousel'
-          className='carousel slide'
-          data-ride='carousel'
-          data-pause='false'
-        >
-          <div className='carousel-inner'>
-            <div className='carousel-item active'>
-              <img className='d-block w-100' src={hotel} alt='#' />
-            </div>
-            <div className='carousel-item'>
-              <img className='d-block w-100' src={habitacion} alt='#' />
-            </div>
-            <div className='carousel-item'>
-              <img className='d-block w-100' src={mostrador} alt='#' />
-            </div>
-            <div className='carousel-item'>
-              <img className='d-block w-100' src={registro} alt='#' />
-            </div>
-          </div>
-        </div>
-      </main>
-    </>
+    <main role='main' className='principal'>
+      <h1>Nombre del Hotel</h1>
+      <Carrusel />
+      <Informacion />
+      <Iframe />
+      <Datos />
+      <Boton />
+    </main>
   );
 };
 

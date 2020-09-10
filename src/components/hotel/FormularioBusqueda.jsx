@@ -25,6 +25,8 @@ const FormularioBusqueda = () => {
       precioMaximo,
       huespedes,
     };
+
+    console.log(data);
   };
 
   const handleOptions = () => {
