@@ -1,26 +1,57 @@
-const path = require('path');
-
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
-    busqueda: path.resolve(__dirname, 'src/pages/hotel/hotel.js'),
-    propietarios: path.resolve(
+    busqueda: join(__dirname, 'src', 'pages', 'hotel', 'hotel.js'),
+    propietarios: join(
       __dirname,
-      'src/pages/registroDeHotel/registroDeHotel.js',
+      'src',
+      'pages',
+      'registroDeHotel',
+      'registroDeHotel.js',
     ),
-    login: path.resolve(__dirname, 'src/pages/login/login.js'),
-    inicio: path.resolve(__dirname, 'src/pages/inicio/inicio.js'),
-    pago: path.resolve(__dirname, 'src/pages/pago/pago.js'),
-    resultado: path.resolve(__dirname, 'src/pages/resultado/resultado.js'),
+    login: join(__dirname, 'src', 'pages', 'login', 'login.js'),
+    inicio: join(__dirname, 'src', 'pages', 'inicio', 'inicio.js'),
+    pago: join(__dirname, 'src', 'pages', 'pago', 'pago.js'),
+    resultado: join(__dirname, 'src', 'pages', 'resultado', 'resultado.js'),
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    path: join(__dirname, 'dist'),
+    filename: 'js/[name].[hash].js',
     publicPath: './',
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      maxSize: 1200,
+    },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({ test: /\.js(\?.*)?$/i, exclude: /\/node_modules/ }),
+      new OptimizeCSSAssetsPlugin(),
+      new CompressionPlugin({
+        filename: 'js/[base]',
+        test: /\.js(\?.*)?$/i,
+        exclude: /\/node_modules/,
+      }),
+      new OptimizeCSSAssetsPlugin({
+        assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        },
+        canPrint: true,
+      }),
+    ],
   },
 
   resolve: {
@@ -36,67 +67,61 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|gif|jpg|svg|eot|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: 'assets/[hash].[ext]',
-              limit: 90000,
-            },
-          },
-        ],
+        test: /\.css$/i,
+        use: [MiniCSSExtractPlugin.loader, { loader: 'css-loader' }],
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, { loader: 'css-loader' }],
+        test: /\.(png|gif|jpg|svg|eot|ttf|woff|woff2)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: 'assets/[hash].[ext]',
+            limit: 900000,
+          },
+        },
       },
     ],
   },
-
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 1000,
-      maxSize: 1000000,
-    },
-  },
-
   plugins: [
-    new OptimizeCssAssetsPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].css',
+    new MiniCSSExtractPlugin({
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[id].[hash].css',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/hotel.html'),
-      filename: path.resolve(__dirname, 'dist/buscar.html'),
+      template: join(__dirname, 'public', 'hotel.html'),
+      filename: join(__dirname, 'dist', 'buscar.html'),
       chunks: ['busqueda'],
+      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/hotelOwners.html'),
-      filename: path.resolve(__dirname, 'dist/propietarios.html'),
+      template: join(__dirname, 'public', 'hotelOwners.html'),
+      filename: join(__dirname, 'dist', 'propietarios.html'),
       chunks: ['propietarios'],
+      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/login.html'),
-      filename: path.resolve(__dirname, 'dist/login.html'),
+      template: join(__dirname, 'public', 'login.html'),
+      filename: join(__dirname, 'dist', 'login.html'),
       chunks: ['login'],
+      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/inicio.html'),
-      filename: path.resolve(__dirname, 'dist/inicio.html'),
+      template: join(__dirname, 'public', 'inicio.html'),
+      filename: join(__dirname, 'dist', 'inicio.html'),
       chunks: ['inicio'],
+      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/pago.html'),
-      filename: path.resolve(__dirname, 'dist/pago.html'),
+      template: join(__dirname, 'public', 'pago.html'),
+      filename: join(__dirname, 'dist', 'pago.html'),
       chunks: ['pago'],
+      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/resultado.html'),
-      filename: path.resolve(__dirname, 'dist/resultado.html'),
+      template: join(__dirname, 'public', 'resultado.html'),
+      filename: join(__dirname, 'dist', 'resultado.html'),
       chunks: ['resultado'],
+      scriptLoading: 'defer',
     }),
   ],
 };
