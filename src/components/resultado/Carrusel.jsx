@@ -11,7 +11,7 @@ import mostrador from '../../img/mostrador.jpg';
 const Carrusel = () => {
   return (
     <>
-      <section className='carrusel section'>
+      <section className='section carrusel'>
         <div
           id='carouselExampleControls'
           className='carousel slide contenedor-carrusel'
@@ -40,7 +40,7 @@ const Carrusel = () => {
             </div>
           </div>
           <a
-            className='carousel-control-prev controles'
+            className='carousel-control-prev'
             href='#carouselExampleControls'
             role='button'
             data-slide='prev'
@@ -49,7 +49,7 @@ const Carrusel = () => {
             <span className='sr-only'>Previous</span>
           </a>
           <a
-            className='carousel-control-next controles'
+            className='carousel-control-next'
             href='#carouselExampleControls'
             role='button'
             data-slide='next'
