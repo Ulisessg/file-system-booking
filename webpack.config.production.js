@@ -39,9 +39,9 @@ module.exports = {
       new TerserPlugin({ test: /\.js(\?.*)?$/i, exclude: /\/node_modules/ }),
       new OptimizeCSSAssetsPlugin(),
       new CompressionPlugin({
-        filename: 'js/[base]',
         test: /\.js(\?.*)?$/i,
         exclude: /\/node_modules/,
+        filename: 'js/compress.[name].[hash].js',
       }),
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /\.optimize\.css$/g,
@@ -91,37 +91,31 @@ module.exports = {
       template: join(__dirname, 'public', 'hotel.html'),
       filename: join(__dirname, 'dist', 'buscar.html'),
       chunks: ['busqueda'],
-      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'hotelOwners.html'),
       filename: join(__dirname, 'dist', 'propietarios.html'),
       chunks: ['propietarios'],
-      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'login.html'),
       filename: join(__dirname, 'dist', 'login.html'),
       chunks: ['login'],
-      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'inicio.html'),
       filename: join(__dirname, 'dist', 'inicio.html'),
       chunks: ['inicio'],
-      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'pago.html'),
       filename: join(__dirname, 'dist', 'pago.html'),
       chunks: ['pago'],
-      scriptLoading: 'defer',
     }),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'resultado.html'),
       filename: join(__dirname, 'dist', 'resultado.html'),
       chunks: ['resultado'],
-      scriptLoading: 'defer',
     }),
   ],
 };
