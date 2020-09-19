@@ -66,7 +66,7 @@ const Header = () => {
             <a className='btn btn-outline-dark mr-sm-2' href='login.html'>
               Iniciar sesion
             </a>
-            <a className='btn btn-outline-dark mr-sm-2' href='#'>
+            <a className='btn btn-outline-dark mr-sm-2' href='/registro.html'>
               Registro
             </a>
           </div>

@@ -13,6 +13,11 @@ module.exports = {
     inicio: path.resolve(__dirname, 'src/pages/inicio/inicio.js'),
     pago: path.resolve(__dirname, 'src/pages/pago/pago.js'),
     resultado: path.resolve(__dirname, 'src/pages/resultado/resultado.js'),
+    registroHotel: path.resolve(
+      __dirname,
+      'src/pages/registroDeHotel/registroDeHotel.js',
+    ),
+    registro: path.resolve(__dirname, 'src/pages/registro/registro.js'),
   },
 
   output: {
@@ -82,6 +87,21 @@ module.exports = {
       template: path.resolve(__dirname, 'public/resultado.html'),
       filename: path.resolve(__dirname, 'dist/resultado.html'),
       chunks: ['resultado'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/registerHotel.html'),
+      filename: path.resolve(__dirname, 'dist/registroHotel.html'),
+      chunks: ['registroHotel'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/register.html'),
+      filename: path.resolve(__dirname, 'dist/registro.html'),
+      chunks: ['registro'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/registerHotel.html'),
+      filename: path.resolve(__dirname, 'dist/registroHotel.html'),
+      chunks: ['registroHotel'],
     }),
   ],
   devServer: {
