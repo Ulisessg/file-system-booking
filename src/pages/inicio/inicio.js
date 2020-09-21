@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDom from 'react-dom';
 
 import Header from '../../components/common/Header';
 
 const Carousel = () => {
+  useEffect(() => {
+    const user = sessionStorage.getItem('Usuario');
+    console.log(user);
+  });
+
   return (
     <>
       <main id='main'>
