@@ -1,5 +1,14 @@
-/* eslint-disable no-use-before-define */
+import React from 'react';
+import ReactDom from 'react-dom';
 import axios from 'axios';
+
+import Header from '../../components/common/Header';
+
+ReactDom.render(<Header />, document.getElementById('header'));
+
+const email = document.getElementById('inputEmail');
+const password = document.getElementById('inputPassword4');
+const button = document.getElementById('login');
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -19,9 +28,5 @@ function handleSubmit(event) {
       console.log(error, 'Usuario no existe, Registralo :D');
     });
 }
-
-const email = document.getElementById('inputEmail');
-const password = document.getElementById('inputPassword4');
-const button = document.getElementById('login');
 
 button.addEventListener('click', handleSubmit);

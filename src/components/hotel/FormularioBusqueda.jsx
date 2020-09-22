@@ -8,16 +8,14 @@ const FormularioBusqueda = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [pais, setPais] = useState('');
   const [ciudad, setCiudad] = useState('');
-  const [fechaEntrada, setFechaEntrada] = useState('');
-  const [fechaSalida, setFechaSalida] = useState('');
-  const [precioMinimo, setPrecioMinimo] = useState('');
-  const [precioMaximo, setPrecioMaximo] = useState('');
-  const [huespedes, setHuespedes] = useState('');
+  const [fechaEntrada] = useState('');
+  const [fechaSalida] = useState('');
+  const [precioMinimo] = useState('');
+  const [precioMaximo] = useState('');
+  const [huespedes] = useState('');
 
   const handleClick = (event) => {
     event.preventDefault();
-    //Ignorar regla hasta enviarla
-    // eslint-disable-next-line no-unused-vars
     const data = {
       pais,
       ciudad,

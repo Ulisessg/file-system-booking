@@ -4,14 +4,15 @@ import axios from 'axios';
 
 const Formulario = () => {
   //account_type_id
+
   const [accountTypeId] = useState(2);
   const [active] = useState(1);
   const [address] = useState('w');
   const [cityId] = useState(1028);
   const [createdAt] = useState('e');
-  const [email] = useState('asdffgdasfdsfds');
+  const [email, setEmail] = useState('');
   const [id] = useState('1');
-  const [lastName] = useState('r');
+  const [lastName, setLastName] = useState('r');
   const [lastLocation] = useState(3);
   const [longLocation] = useState(4);
   const [name, setName] = useState('t');
@@ -19,14 +20,6 @@ const Formulario = () => {
   const [phoneNumber] = useState('y');
   const [profileImageUrl] = useState('u');
   const [updatedAt] = useState('u');
-
-  const handleChange = (event, usuario) => {
-    setName(event.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,23 +50,69 @@ const Formulario = () => {
 
   return (
     <>
-      <form>
-        <input
-          type='text'
-          id='usuario'
-          placeholder='Nombre'
-          onChange={() => handleChange(event, 'name')}
-        />
-        <input
-          type='text'
-          id='usuario'
-          placeholder='Nombre'
-          onChange={() => handlePassword(event, 'name')}
-        />
-        <button type='submit' onClick={handleSubmit}>
-          Registate
-        </button>
-      </form>
+      <section className='formulario container'>
+        <form name='form'>
+          <div className='form-group expand'>
+            <label htmlFor='email'>
+              Email:
+              <input
+                name='email'
+                id='email'
+                type='email'
+                className='form-control'
+                placeholder='Email'
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+          </div>
+          <div className='form-group expand'>
+            <label htmlFor='nombre'>
+              Nombre:
+              <input
+                name='nombre'
+                id='nombre'
+                type='text'
+                className='form-control fecha'
+                placeholder='Nombre'
+                onChange={(event) => setName(event.target.value)}
+              />
+            </label>
+          </div>
+          {/* Fecha de salida */}
+          <div className='form-group expand'>
+            <label htmlFor='last_name'>
+              Fecha de salida:
+              <input
+                name='last_name'
+                id='last_name'
+                type='text'
+                className='form-control fecha'
+                placeholder='Apellido'
+                onChange={(event) => setLastName(event.target.value)}
+              />
+            </label>
+            <button type='submit' onClick={handleSubmit}>
+              A
+            </button>
+          </div>
+          <div className='form-group expand'>
+            <label htmlFor='password'>
+              Contraseña:
+              <input
+                name='password'
+                id='password'
+                type='password'
+                className='form-control fecha'
+                placeholder='Contraseña'
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </label>
+            <button type='submit' onClick={handleSubmit}>
+              Registrar
+            </button>
+          </div>
+        </form>
+      </section>
     </>
   );
 };
