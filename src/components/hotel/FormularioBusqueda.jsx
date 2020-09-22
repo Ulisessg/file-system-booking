@@ -6,7 +6,8 @@ const FormularioBusqueda = () => {
   //Estados
   const [showButtonSearch, setShowButtonSearch] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
-  const [ubicacion, setUbicacion] = useState('');
+  const [pais, setPais] = useState('');
+  const [ciudad, setCiudad] = useState('');
   const [fechaEntrada, setFechaEntrada] = useState('');
   const [fechaSalida, setFechaSalida] = useState('');
   const [precioMinimo, setPrecioMinimo] = useState('');
@@ -18,7 +19,8 @@ const FormularioBusqueda = () => {
     //Ignorar regla hasta enviarla
     // eslint-disable-next-line no-unused-vars
     const data = {
-      ubicacion,
+      pais,
+      ciudad,
       fechaEntrada,
       fechaSalida,
       precioMinimo,
@@ -51,15 +53,47 @@ const FormularioBusqueda = () => {
         <form name='form'>
           {/* Ubicación */}
           <div className='form-group expand'>
-            <label htmlFor='ubicacion'>
-              Ubicación:
+            <label htmlFor='pais'>
+              País:
               <input
-                name='ubicacion'
-                id='ubicacion'
+                name='pais'
+                id='pais'
                 type='text'
                 className='form-control'
-                placeholder='Ubicación'
-                onChange={(event) => setUbicacion(event.target.value)}
+                placeholder='Pais'
+                onChange={(event) => setPais(event.target.value)}
+              />
+            </label>
+            <label htmlFor='ciudad'>
+              Ciudad:
+              <input
+                name='ciudad'
+                id='ciudad'
+                type='text'
+                className='form-control'
+                placeholder='Ciudad'
+                onChange={(event) => {
+                  const data = event.target.value;
+
+                  const ciudad = data.toLowerCase();
+
+                  switch (ciudad) {
+                    case 'bogota':
+                      setCiudad(1028);
+                      break;
+                    case 'bogotá':
+                      setCiudad(1028);
+                      break;
+                    case 'medellin':
+                      setCiudad(1);
+                      break;
+                    case 'medellín':
+                      setCiudad(1);
+                      break;
+                    default:
+                      setCiudad(null);
+                  }
+                }}
               />
             </label>
           </div>
