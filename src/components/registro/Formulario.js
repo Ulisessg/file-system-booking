@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import '../../styles/FormularioBusqueda.css';
+
 const Formulario = () => {
   //account_type_id
 
@@ -91,9 +93,6 @@ const Formulario = () => {
                 onChange={(event) => setLastName(event.target.value)}
               />
             </label>
-            <button type='submit' onClick={handleSubmit}>
-              A
-            </button>
           </div>
           <div className='form-group expand'>
             <label htmlFor='password'>
@@ -107,11 +106,16 @@ const Formulario = () => {
                 onChange={(event) => setPassword(event.target.value)}
               />
             </label>
-            <button type='submit' onClick={handleSubmit}>
-              Registrar
-            </button>
           </div>
         </form>
+        <button
+          className='btn btn-primary btn-lg'
+          type='submit'
+          onClick={handleSubmit}
+          style={{ margin: '10 10 0 0' }}
+        >
+          Registrar
+        </button>
       </section>
     </>
   );
