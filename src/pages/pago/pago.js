@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+import Header from '../../components/common/Header';
+import FormularioPago from '../../components/pago/FormularioPago';
+
 ReactDom.render(
-  <span className='btn btn-primary'>AAAA</span>,
+  <>
+    <Header />
+    <FormularioPago />
+  </>,
   document.getElementById('root'),
 );

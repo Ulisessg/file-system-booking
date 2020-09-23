@@ -16,7 +16,7 @@ const Card = () => {
       <Informacion />
       <Iframe />
       <Datos />
-      <Boton />
+      <Boton value='Reserva ahora!' prevent={false} />
     </main>
   );
 };
