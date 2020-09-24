@@ -3,11 +3,11 @@ import React from 'react';
 import '../../styles/card.css';
 
 const Boton = (props) => {
-  const { prevent, value } = props;
+  const { prevent, value, redirect } = props;
 
   return (
     <div className='boton_conatiner'>
-      <a href='./pago.html'>
+      <a href={redirect}>
         {prevent ? (
           <button
             className='btn btn-primary btn-lg'

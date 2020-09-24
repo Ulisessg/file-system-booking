@@ -16,7 +16,7 @@ const Card = () => {
       <Informacion />
       <Iframe />
       <Datos />
-      <Boton value='Reserva ahora!' prevent={false} />
+      <Boton value='Reserva ahora!' prevent={false} redirect='./pago.html' />
     </main>
   );
 };

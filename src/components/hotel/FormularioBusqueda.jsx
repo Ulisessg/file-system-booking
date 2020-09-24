@@ -1,32 +1,15 @@
+/* eslint-disable comma-dangle */
 import React, { useState } from 'react';
 
 import '../../styles/FormularioBusqueda.css';
 
-const FormularioBusqueda = () => {
+const FormularioBusqueda = (props) => {
   //Estados
   const [showButtonSearch, setShowButtonSearch] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
-  const [pais, setPais] = useState('');
-  const [ciudad, setCiudad] = useState('');
-  const [fechaEntrada] = useState('');
-  const [fechaSalida] = useState('');
-  const [precioMinimo] = useState('');
-  const [precioMaximo] = useState('');
-  const [huespedes] = useState('');
 
   const handleClick = (event) => {
     event.preventDefault();
-    const data = {
-      pais,
-      ciudad,
-      fechaEntrada,
-      fechaSalida,
-      precioMinimo,
-      precioMaximo,
-      huespedes,
-    };
-
-    console.log(data);
   };
 
   const handleOptions = () => {
@@ -34,9 +17,6 @@ const FormularioBusqueda = () => {
       setShowOptions(false);
       setShowButtonSearch(true);
       //Valores iniciales
-      setPrecioMaximo('');
-      setPrecioMinimo('');
-      setHuespedes('');
     } else {
       setShowOptions(true);
       setShowButtonSearch(false);
@@ -77,19 +57,19 @@ const FormularioBusqueda = () => {
 
                   switch (ciudad) {
                     case 'bogota':
-                      setCiudad(1028);
+                      props.onChange('bogota');
                       break;
                     case 'bogotá':
-                      setCiudad(1028);
+                      props.onChange('bogota');
                       break;
                     case 'medellin':
-                      setCiudad(1);
+                      props.onChange('medellin');
                       break;
                     case 'medellín':
-                      setCiudad(1);
+                      props.onChange('medellin');
                       break;
                     default:
-                      setCiudad(null);
+                      props.onChange(null);
                   }
                 }}
               />
@@ -105,7 +85,7 @@ const FormularioBusqueda = () => {
                 type='date'
                 className='form-control fecha'
                 placeholder='fecha de entrada'
-                onChange={(event) => setFechaEntrada(event.target.value)}
+                // onChange={(event) => setFechaEntrada(event.target.value)}
               />
             </label>
           </div>
@@ -119,7 +99,7 @@ const FormularioBusqueda = () => {
                 type='date'
                 className='form-control fecha'
                 placeholder='Fecha de salida'
-                onChange={(event) => setFechaSalida(event.target.value)}
+                // onChange={(event) => setFechaSalida(event.target.value)}
               />
             </label>
           </div>
@@ -159,7 +139,7 @@ const FormularioBusqueda = () => {
                     type='number'
                     className='form-control'
                     placeholder='Precio mínimo'
-                    onChange={(event) => setPrecioMinimo(event.target.value)}
+                    // onChange={(event) => setPrecioMinimo(event.target.value)}
                   />
                 </label>
               </div>
@@ -174,7 +154,7 @@ const FormularioBusqueda = () => {
                     type='number'
                     className='form-control'
                     placeholder='Precio máximo'
-                    onChange={(event) => setPrecioMaximo(event.target.value)}
+                    // onChange={(event) => setPrecioMaximo(event.target.value)}
                   />
                 </label>
               </div>
@@ -189,7 +169,7 @@ const FormularioBusqueda = () => {
                     type='number'
                     className='form-control'
                     placeholder='Número de huespedes'
-                    onChange={(event) => setHuespedes(event.target.value)}
+                    // onChange={(event) => setHuespedes(event.target.value)}
                   />
                 </label>
               </div>

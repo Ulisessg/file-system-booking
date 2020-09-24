@@ -18,7 +18,6 @@ const FormularioPago = () => {
                 type='text'
                 className='form-control'
                 placeholder='Ejemplo: Estefania Lopez Perez'
-                // onChange={(event) => setEmail(event.target.value)}
               />
             </label>
           </div>
@@ -30,8 +29,7 @@ const FormularioPago = () => {
                 id='card'
                 type='tel'
                 className='form-control'
-                placeholder='xxx-xxx-xxx-xxx'
-                // onChange={(event) => setEmail(event.target.value)}
+                placeholder='xxx-xxx-xxx-xxx-xxx'
               />
             </label>
           </div>
@@ -43,11 +41,10 @@ const FormularioPago = () => {
                 id='exp'
                 type='month'
                 className='form-control'
-                // onChange={(event) => setEmail(event.target.value)}
               />
             </label>
           </div>
-          <Boton value='Pagar' prevent={true} />
+          <Boton value='Pagar' redirect='/buscar.html' />
         </form>
       </section>
     </>

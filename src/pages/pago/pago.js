@@ -11,3 +11,5 @@ ReactDom.render(
   </>,
   document.getElementById('root'),
 );
+
+ReactDom.createPortal(<h1>Hello</h1>, document.getElementById('port'));

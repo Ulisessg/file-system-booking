@@ -18,6 +18,7 @@ module.exports = {
       'src/pages/registroDeHotel/registroDeHotel.js',
     ),
     registro: path.resolve(__dirname, 'src/pages/registro/registro.js'),
+    dashboard: path.resolve(__dirname, 'src/pages/dashboard/dashboard.js'),
   },
 
   output: {
@@ -67,6 +68,11 @@ module.exports = {
       template: path.resolve(__dirname, 'public/hotelOwners.html'),
       filename: path.resolve(__dirname, 'dist/propietarios.html'),
       chunks: ['propietarios'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/dashboard.html'),
+      filename: path.resolve(__dirname, 'dist/dashboard.html'),
+      chunks: ['dashboard'],
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/login.html'),

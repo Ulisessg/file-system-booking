@@ -6,16 +6,12 @@ import Header from '../../components/common/Header';
 
 ReactDom.render(<Header />, document.getElementById('header'));
 
-const email = document.getElementById('inputEmail');
-const password = document.getElementById('inputPassword4');
-const button = document.getElementById('login');
-
 function handleSubmit(event) {
   event.preventDefault();
   const data = { email: email.value, password: password.value };
 
   axios
-    .post('http://34.71.227.39:5000/api/auth/login', data)
+    .post('http://34.123.42.82:5000//api/auth/login', data)
     .then((response) => {
       console.log(response.data);
     })
@@ -24,9 +20,17 @@ function handleSubmit(event) {
       const user = sessionStorage.getItem('Usuario');
       console.log(user);
     })
+    .then(() => {
+      if (window.sessionStorage.length === 1) {
+        window.location.assign('/dashboard.html');
+      }
+    })
     .catch((error) => {
       console.log(error, 'Usuario no existe, Registralo :D');
     });
 }
 
+const email = document.getElementById('inputEmail');
+const password = document.getElementById('inputPassword4');
+const button = document.getElementById('login');
 button.addEventListener('click', handleSubmit);

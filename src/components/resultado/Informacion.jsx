@@ -32,24 +32,16 @@ const Informacion = () => {
               <td>Lomas</td>
             </tr>
             <tr>
-              <td>
-                <td>12-2-2020</td>
-              </td>
+              <td>12-2-2020</td>
             </tr>
             <tr>
-              <td>
-                <td>13-2-2020</td>
-              </td>
+              <td>13-2-2020</td>
             </tr>
             <tr>
-              <td>
-                <td>$3500</td>
-              </td>
+              <td>$3500</td>
             </tr>
             <tr>
-              <td>
-                <td>2</td>
-              </td>
+              <td>2</td>
             </tr>
           </tbody>
         </table>

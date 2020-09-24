@@ -26,6 +26,7 @@ const Formulario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log(token);
     const dataUSer = {
       account_type_id: accountTypeId,
       active,
@@ -45,9 +46,6 @@ const Formulario = () => {
     };
 
     console.log(dataUSer);
-    axios
-      .post('http://34.71.227.39:5000/api/auth/signup', dataUSer)
-      .then((response) => console.log(response.data.msg));
   };
 
   return (
