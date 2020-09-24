@@ -1,0 +1,21 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn build
+deploy:
+  provider: pages
+  edge: true
+  keep_history: true
+  github_token: $BOOKING
+  local_dir: dist/
+  target_branch: gh-pages
+  commit_message: 'New deploy :D'
+  on:
+    branch: master
