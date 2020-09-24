@@ -8,18 +8,21 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    busqueda: join(__dirname, 'src', 'pages', 'hotel', 'hotel.js'),
-    propietarios: join(
+    busqueda: path.resolve(__dirname, 'src/pages/hotel/hotel.js'),
+    propietarios: path.resolve(
       __dirname,
-      'src',
-      'pages',
-      'registroDeHotel',
-      'registroDeHotel.js',
+      'src/pages/registroDeHotel/registroDeHotel.js',
     ),
-    login: join(__dirname, 'src', 'pages', 'login', 'login.js'),
-    inicio: join(__dirname, 'src', 'pages', 'inicio', 'inicio.js'),
-    pago: join(__dirname, 'src', 'pages', 'pago', 'pago.js'),
-    resultado: join(__dirname, 'src', 'pages', 'resultado', 'resultado.js'),
+    login: path.resolve(__dirname, 'src/pages/login/login.js'),
+    inicio: path.resolve(__dirname, 'src/pages/inicio/inicio.js'),
+    pago: path.resolve(__dirname, 'src/pages/pago/pago.js'),
+    resultado: path.resolve(__dirname, 'src/pages/resultado/resultado.js'),
+    registroHotel: path.resolve(
+      __dirname,
+      'src/pages/registroDeHotel/registroDeHotel.js',
+    ),
+    registro: path.resolve(__dirname, 'src/pages/registro/registro.js'),
+    dashboard: path.resolve(__dirname, 'src/pages/dashboard/dashboard.js'),
   },
 
   output: {
@@ -83,39 +86,56 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCSSExtractPlugin({
-      filename: 'css/[name].[hash].css',
-      chunkFilename: 'css/[id].[hash].css',
-    }),
+    new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'hotel.html'),
-      filename: join(__dirname, 'dist', 'buscar.html'),
+      template: path.resolve(__dirname, 'public/hotel.html'),
+      filename: path.resolve(__dirname, 'dist/buscar.html'),
       chunks: ['busqueda'],
     }),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'hotelOwners.html'),
-      filename: join(__dirname, 'dist', 'propietarios.html'),
+      template: path.resolve(__dirname, 'public/hotelOwners.html'),
+      filename: path.resolve(__dirname, 'dist/propietarios.html'),
       chunks: ['propietarios'],
     }),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'login.html'),
-      filename: join(__dirname, 'dist', 'login.html'),
+      template: path.resolve(__dirname, 'public/dashboard.html'),
+      filename: path.resolve(__dirname, 'dist/dashboard.html'),
+      chunks: ['dashboard'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/login.html'),
+      filename: path.resolve(__dirname, 'dist/login.html'),
       chunks: ['login'],
     }),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'inicio.html'),
-      filename: join(__dirname, 'dist', 'inicio.html'),
+      template: path.resolve(__dirname, 'public/inicio.html'),
+      filename: path.resolve(__dirname, 'dist/inicio.html'),
       chunks: ['inicio'],
     }),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'pago.html'),
-      filename: join(__dirname, 'dist', 'pago.html'),
+      template: path.resolve(__dirname, 'public/pago.html'),
+      filename: path.resolve(__dirname, 'dist/pago.html'),
       chunks: ['pago'],
     }),
     new HtmlWebpackPlugin({
-      template: join(__dirname, 'public', 'resultado.html'),
-      filename: join(__dirname, 'dist', 'resultado.html'),
+      template: path.resolve(__dirname, 'public/resultado.html'),
+      filename: path.resolve(__dirname, 'dist/resultado.html'),
       chunks: ['resultado'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/registerHotel.html'),
+      filename: path.resolve(__dirname, 'dist/registroHotel.html'),
+      chunks: ['registroHotel'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/register.html'),
+      filename: path.resolve(__dirname, 'dist/registro.html'),
+      chunks: ['registro'],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/registerHotel.html'),
+      filename: path.resolve(__dirname, 'dist/registroHotel.html'),
+      chunks: ['registroHotel'],
     }),
   ],
 };
