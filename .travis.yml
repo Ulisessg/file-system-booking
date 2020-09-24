@@ -8,6 +8,7 @@ node_js:
 git:
   depth: 3
 script:
+  - npm install
   - yarn build
 deploy:
   provider: pages
