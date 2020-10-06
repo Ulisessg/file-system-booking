@@ -7,8 +7,8 @@ node_js:
 git:
   depth: 3
 script:
-  - yarn install
-  - yarn build
+  - npm install
+  - npm run build
 deploy:
   provider: pages
   edge: true
@@ -18,4 +18,4 @@ deploy:
   target_branch: gh-pages
   commit_message: 'New deploy :D'
   on:
-    branch: master
+    branch: gh-pages
