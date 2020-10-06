@@ -1,4 +1,4 @@
-const { join } = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -26,9 +26,8 @@ module.exports = {
   },
 
   output: {
-    path: join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'js/[name].[hash].js',
-    publicPath: './',
   },
 
   optimization: {
@@ -44,7 +43,7 @@ module.exports = {
       new CompressionPlugin({
         test: /\.js(\?.*)?$/i,
         exclude: /\/node_modules/,
-        filename: 'js/compress.[name].[hash].js',
+        filename: 'js/[name].[hash].js',
       }),
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /\.optimize\.css$/g,
@@ -56,10 +55,10 @@ module.exports = {
       }),
     ],
   },
-
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+
   module: {
     rules: [
       {
@@ -86,7 +85,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HotModuleReplacementPlugin(),
+    new MiniCSSExtractPlugin({
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[id].[hash].css',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/hotel.html'),
       filename: path.resolve(__dirname, 'dist/buscar.html'),
