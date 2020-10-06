@@ -19,4 +19,4 @@ deploy:
   target_branch: gh-pages
   commit_message: 'New deploy :D'
   on:
-    branch: gh-pages
+    branch: master
